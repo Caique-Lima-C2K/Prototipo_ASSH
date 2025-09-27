@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+:root {
+    --primary-purple: #6a0dad;
+    --dark-bg: #100f1c;
+    --light-text: #f0f0f0;
+    --gray-text: #cccccc;
+    --input-bg: #2a2a3a;
+    --button-secondary-bg: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+}
+
+
+/* --- Cabeçalho --- */
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+
+/* --- ESTILO DE GRADIENTE PARA O TÍTULO --- */
+
+.logo,
+.logo-login {
+    background: linear-gradient(to right, #6a0dad, #9c4dff, #c77dff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: var(--light-text);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+
+/* --- Menu Lateral --- */
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 280px;
+    background-color: #121225;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 30px;
+    gap: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.side-menu.active {
+    transform: translateX(0);
+}
+
+.side-menu .menu-item {
+    background-color: #2e2e4d;
+    color: var(--light-text);
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.side-menu .menu-item:hover {
+    background-color: var(--primary-purple);
+}
+
+
+/* --- Página Principal (Home) --- */
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('Imagens/fundo-home.jpg.png');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--gray-text);
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary-purple);
+    color: var(--light-text);
+    border-color: var(--primary-purple);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-purple);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--light-text);
+    border-color: var(--light-text);
+}
+
+.btn-secondary:hover {
+    background-color: var(--light-text);
+    color: var(--dark-bg);
+}
+
+
+/* --- Seção Soluções --- */
+
+.solutions {
+    background-color: #0c0b15;
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.solutions h2 {
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.solution-item {
+    background-color: #1a192a;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.solution-item i {
+    font-size: 2.5rem;
+    color: var(--primary-purple);
+    margin-bottom: 15px;
+}
+
+.solution-item p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--gray-text);
+}
+
+
+/* --- Página de Login --- */
+
+.login-page {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(18, 17, 28, 0.8)), url('Imagens/fundo-login.jpg.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+}
+
+.logo-login {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    color: var(--gray-text);
+}
+
+.input-group .fa-eye-slash,
+.input-group .fa-eye {
+    left: auto;
+    right: 15px;
+    cursor: pointer;
+}
+
+.input-group input {
+    width: 100%;
+    background-color: var(--button-secondary-bg);
+    border: 1px solid #444;
+    border-radius: 25px;
+    padding: 15px 15px 15px 45px;
+    color: var(--light-text);
+    font-size: 1rem;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-purple);
+}
+
+.forgot-password {
+    color: var(--gray-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-align: right;
+    margin-top: -10px;
+}
+
+.btn-login {
+    background-color: var(--primary-purple);
+    color: var(--light-text);
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.separator {
+    text-align: center;
+    color: var(--gray-text);
+}
+
+.btn-register {
+    background: transparent;
+    color: var(--light-text);
+    border: 1px solid var(--light-text);
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+
+/* --- Página de Conteúdo Exemplo --- */
+
+.content-page {
+    text-align: center;
+    padding: 50px;
+}
+
+.content-page .main-header {
+    position: static;
+}
+
+.content-page main {
+    padding-top: 50px;
+}
+
+
+/* --- Media Queries para Responsividade --- */
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+
+/* --- ESTILOS DO RODAPÉ DE CONTATO --- */
+
+.main-footer-contact {
+    background-color: #0c0b15;
+    color: var(--gray-text);
+    text-align: center;
+    padding: 40px 5%;
+    border-top: 1px solid #2a2a3a;
+}
+
+.main-footer-contact p {
+    margin-bottom: 8px;
+}
+
+.main-footer-contact a {
+    color: var(--light-text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.main-footer-contact a:hover {
+    color: var(--primary-purple);
+    text-decoration: underline;
+}

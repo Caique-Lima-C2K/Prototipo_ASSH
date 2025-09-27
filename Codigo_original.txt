@@ -1,0 +1,495 @@
+/seu-site
+|-- /imagens
+|   |-- fundo-home.jpg       (a imagem "corte esta imagem pa.jpg")
+|   |-- fundo-login.jpg      (a imagem "2.jpg")
+|
+|-- index.html               (Página principal)
+|-- login.html               (Página de login)
+|-- cursos.html              (Página de Cursos - exemplo)
+|-- solucoes.html            (Página de Soluções - exemplo)
+|-- style.css                (Arquivo de estilos)
+|-- script.js                (Arquivo de funcionalidades)
+
+--------------------------------------------------------------------------------------------------------------------
+
+index.html:
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSH - Domine a Tecnologia</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">ASSH</div>
+        <nav class="main-nav">
+            <button id="menu-toggle" class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <div id="side-menu" class="side-menu">
+        <a href="login.html" class="menu-item">Entrar</a>
+        <a href="#" class="menu-item">Para você</a>
+        <a href="cursos.html" class="menu-item">Cursos</a>
+        <a href="#" class="menu-item">Comunidade</a>
+        <a href="#" class="menu-item">Sobre Nós</a>
+    </div>
+
+    <main class="hero">
+        <div class="hero-content">
+            <h1>Domine a Tecnologia, Transforme seu Futuro.</h1>
+            <p>A plataforma que une alunos, cursos e uma comunidade para impulsionar a sua jornada.</p>
+            <div class="hero-buttons">
+                <a href="solucoes.html" class="btn btn-primary">SOLUÇÕES PARA ESCOLAS</a>
+                <a href="cursos.html" class="btn btn-secondary">EXPLORE OS CURSOS</a>
+            </div>
+        </div>
+    </main>
+
+    <section class="solutions">
+        <h2>SOLUÇÕES DE PROBLEMAS</h2>
+        <div class="solutions-grid">
+            <div class="solution-item">
+                <i class="fa-solid fa-gear"></i>
+                <p>DESEMPENHO E OTIMIZAÇÃO</p>
+            </div>
+            <div class="solution-item">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                <p>INOVAÇÃO E GESTÃO</p>
+            </div>
+            <div class="solution-item">
+                <i class="fa-regular fa-lightbulb"></i>
+                <p>TECNOLOGIA E INOVAÇÃO</p>
+            </div>
+            <div class="solution-item">
+                <i class="fa-solid fa-rocket"></i>
+                <p>MERCADO DE TRABALHO</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+--------------------------------------------------------------------------------------------------------------------
+
+login.html
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ASSH</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="login-page">
+    
+    <div class="login-container">
+        <div class="logo-login">ASSH</div>
+        <form class="login-form">
+            <div class="input-group">
+                <i class="fa-regular fa-user"></i>
+                <input type="email" placeholder=" " required>
+            </div>
+            <div class="input-group">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="password-field" placeholder=" " required>
+                <i class="fa-regular fa-eye-slash" id="toggle-password"></i>
+            </div>
+            <a href="#" class="forgot-password">ESQUECEU A SENHA?</a>
+            <button type="submit" class="btn btn-login">Entrar</button>
+            <div class="separator">Ou</div>
+            <button type="button" class="btn btn-register">Cadastre-se</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+--------------------------------------------------------------------------------------------------------------------
+
+cursos.html:
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos - ASSH</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="content-page">
+    <header class="main-header">
+        <a href="index.html" class="logo">ASSH</a>
+    </header>
+    <main>
+        <h1>Nossos Cursos</h1>
+        <p>Página em construção.</p>
+    </main>
+</body>
+</html>
+
+--------------------------------------------------------------------------------------------------------------------
+
+style.css:
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+:root {
+    --primary-purple: #6a0dad;
+    --dark-bg: #100f1c;
+    --light-text: #f0f0f0;
+    --gray-text: #cccccc;
+    --input-bg: #2a2a3a;
+    --button-secondary-bg: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+}
+
+/* --- Cabeçalho --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: var(--light-text);
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: var(--light-text);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* --- Menu Lateral --- */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 280px;
+    background-color: #121225;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 30px;
+    gap: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.side-menu.active {
+    transform: translateX(0);
+}
+
+.side-menu .menu-item {
+    background-color: #2e2e4d;
+    color: var(--light-text);
+    text-decoration: none;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.side-menu .menu-item:hover {
+    background-color: var(--primary-purple);
+}
+
+/* --- Página Principal (Home) --- */
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('./imagens/fundo-home.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--gray-text);
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary-purple);
+    color: var(--light-text);
+    border-color: var(--primary-purple);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-purple);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--light-text);
+    border-color: var(--light-text);
+}
+
+.btn-secondary:hover {
+    background-color: var(--light-text);
+    color: var(--dark-bg);
+}
+
+/* --- Seção Soluções --- */
+.solutions {
+    background-color: #0c0b15;
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.solutions h2 {
+    margin-bottom: 40px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.solution-item {
+    background-color: #1a192a;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.solution-item i {
+    font-size: 2.5rem;
+    color: var(--primary-purple);
+    margin-bottom: 15px;
+}
+
+.solution-item p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--gray-text);
+}
+
+/* --- Página de Login --- */
+.login-page {
+    background-image: linear-gradient(to right, rgba(0,0,0,0.5), rgba(18, 17, 28, 0.8)), url('./imagens/fundo-login.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+}
+
+.logo-login {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    color: var(--gray-text);
+}
+
+.input-group .fa-eye-slash, .input-group .fa-eye {
+    left: auto;
+    right: 15px;
+    cursor: pointer;
+}
+
+.input-group input {
+    width: 100%;
+    background-color: var(--button-secondary-bg);
+    border: 1px solid #444;
+    border-radius: 25px;
+    padding: 15px 15px 15px 45px;
+    color: var(--light-text);
+    font-size: 1rem;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-purple);
+}
+
+.forgot-password {
+    color: var(--gray-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-align: right;
+    margin-top: -10px;
+}
+
+.btn-login {
+    background-color: var(--primary-purple);
+    color: var(--light-text);
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.separator {
+    text-align: center;
+    color: var(--gray-text);
+}
+
+.btn-register {
+    background: transparent;
+    color: var(--light-text);
+    border: 1px solid var(--light-text);
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* --- Página de Conteúdo Exemplo --- */
+.content-page {
+    text-align: center;
+    padding: 50px;
+}
+.content-page .main-header {
+    position: static;
+}
+.content-page main {
+    padding-top: 50px;
+}
+
+/* --- Media Queries para Responsividade --- */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------
+
+script.js:
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- Funcionalidade do Menu Mobile ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const sideMenu = document.getElementById('side-menu');
+
+    if (menuToggle && sideMenu) {
+        menuToggle.addEventListener('click', () => {
+            sideMenu.classList.toggle('active');
+        });
+
+        // Opcional: Fechar o menu ao clicar fora dele
+        document.addEventListener('click', (event) => {
+            if (!sideMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                sideMenu.classList.remove('active');
+            }
+        });
+    }
+
+
+    // --- Funcionalidade de Mostrar/Ocultar Senha na Página de Login ---
+    const togglePassword = document.getElementById('toggle-password');
+    const passwordField = document.getElementById('password-field');
+
+    if (togglePassword && passwordField) {
+        togglePassword.addEventListener('click', () => {
+            // Verifica o tipo do campo de senha
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            
+            // Troca o ícone do olho
+            togglePassword.classList.toggle('fa-eye');
+            togglePassword.classList.toggle('fa-eye-slash');
+        });
+    }
+
+});
